@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "Viga";
+    src: url('../fonts/Viga-Regular.ttf');
+}
+
+body {
+    padding: 10px !important;
+}
+
+.navbar-brand.logo {
+    font-family: 'Viga', cursive;
+    font-size: 26pt;
+}

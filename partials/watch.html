@@ -1,0 +1,25 @@
+<div class="container-fluid" xmlns="http://www.w3.org/1999/html">
+
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table">
+        <tr ng-repeat-start="day in schedule.conference.days">
+          <td colspan="4"><b>{{ day.date }}</b></td>
+        </tr>
+          <tr ng-repeat-start="room in day.rooms"></tr>
+          <tr ng-repeat="event in room | filter:filter | orderBy:'start'">
+            <td ng-show="isStarred(event.id)">
+              <i class="glyphicon glyphicon-star" ng-show="isStarred(event.id)" ng-click="unstar(event.id)"></i>
+            </td>
+            <td ng-show="isStarred(event.id)">{{ event.title }}</td>
+            <td ng-show="isStarred(event.id)">{{ event.start}}</td>
+            <td ng-show="isStarred(event.id)">{{ event.room }}</td>
+          </tr>
+          <tr ng-repeat-end></tr>
+          <tr ng-repeat-end><tr>
+      </table>
+
+    </div>
+  </div> <!-- row -->
+
+</div> <!-- container -->
